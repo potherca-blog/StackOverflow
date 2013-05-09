@@ -36,7 +36,7 @@ sets the correct headers for you.
 <img src="controllers_brief.svg">
 
 
-### Linking to files hosted on [github.io][2]
+### Linking to files hosted on [github.io][1]
 #### Code
 
     ![Alt text](http://potherca.github.io/StackOverflow/question-13808020-include-an-svg-hosted-on-github-in-markdown/controllers_brief.svg)
@@ -46,7 +46,7 @@ sets the correct headers for you.
 ![Alt text](http://potherca.github.io/StackOverflow/question-13808020-include-an-svg-hosted-on-github-in-markdown/controllers_brief.svg)
 <img src="http://potherca.github.io/StackOverflow/question-13808020-include-an-svg-hosted-on-github-in-markdown/controllers_brief.svg">
 
-### Linking to RAW files using [rawgithub.com][4]
+### Linking to RAW files using [rawgithub.com][3]
 #### Code
     ![Alt text](https://rawgithub.com/potherca/StackOverflow/gh-pages/question-13808020-include-an-svg-hosted-on-github-in-markdown/controllers_brief.svg)
     <img src="https://rawgithub.com/potherca/StackOverflow/gh-pages/question-13808020-include-an-svg-hosted-on-github-in-markdown/controllers_brief.svg">
