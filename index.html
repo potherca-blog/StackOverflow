@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8"/>
+    <title></title>
+
+    <link rel="stylesheet" media="all" href="http://potherca.github.io/CssBase/css/base.css" />
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js"></script>
+    <script src="https://rawgithub.com/chjj/marked/master/lib/marked.js"></script>
+    <script>
+    var sUrl = 'readme.md';
+    $.get(sUrl, function(p_sResult) {
+        $('body').html(
+            marked(p_sResult)
+        );
+    });
+    </script>
+</head>
+<body>
+    <p>Content should be loaded here shortly</p>
+</body>
+</html>
