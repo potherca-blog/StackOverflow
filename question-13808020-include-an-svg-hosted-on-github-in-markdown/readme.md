@@ -1,6 +1,4 @@
-<style>
-    img {height:200px;width:200px;}
-</style>
+
 
 # Linking to SVG files hosted on github
 
