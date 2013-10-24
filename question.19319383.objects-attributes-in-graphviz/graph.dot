@@ -1,0 +1,48 @@
+    digraph g{
+    
+        // To see a list of available fonts under UNIX, run `fc-list`
+
+        fontname = "DroidSans, Bold"
+ 
+        // Set the graph direction from left to right
+        // otherwise the boxes will be above eachother
+        // with the arrows pointing up and down
+        rankdir="LR"
+
+        node [
+            shape = "none"  // hide the border of the nodes in the cluster supgraph
+            fontname = "DroidSans"
+        ]
+        
+        edge [
+            style = "dashed"    // make the lines dashed, remove if you want solid lines
+            fontname = "Droid Sans Mono"
+        ]
+
+        subgraph cluster_ready {
+            label = "Ready"
+            
+            ready_op_1_2 [label="operation1, operation2"]
+            ready_op_1_3 [label="operation1, operation3"]
+        }
+
+        subgraph cluster_paused {
+            label = "Paused"
+            
+            paused_op_1_2 [label="operation1, operation2"]
+            paused_op_1_3 [label="operation1, operation3"]
+        }
+        
+        ready_op_1_2 -> paused_op_1_2 [label="pause()"]
+        paused_op_1_3 -> ready_op_1_3 [label="continue()"]
+    }
+
+
+/*
+ ________________________               ________________________
+|         Ready          |    pause()  |         Paused         |
+| operation1, operation2 |------------>| operation1, operation2 |
+| operation1, operation3 |  continue() | operation1, operation3 |
+|________________________|<------------|________________________|
+
+*/

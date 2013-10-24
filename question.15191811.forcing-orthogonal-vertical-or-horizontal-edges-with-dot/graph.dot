@@ -1,0 +1,7 @@
+digraph G {
+
+    graph [splines=ortho, nodesep=1]
+    node [shape=record]
+
+    A -> {B, C} -> D
+}
