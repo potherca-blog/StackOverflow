@@ -7,6 +7,5 @@ version is profided using jsfiddle or ideone, etc, but I thought it might be a
 good idea to have all of this information together in one place as well.
 
 <!-- @TODO: Link to the accompanying website -->
-<!-- @TODO: List answers/questions thus far? -->
 
--- EOF --
+<!-- EOF -->
