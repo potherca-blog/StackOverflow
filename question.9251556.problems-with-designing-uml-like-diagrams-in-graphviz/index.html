@@ -31,8 +31,10 @@
             padding: 2% 0;
         }
         
-        .compare-card h3 {
+        .compare-card h3,
+        .compare-card h4 {
             margin-bottom: 0.5em;
+            font-size: 125%;
         }
 
         img {
@@ -78,12 +80,14 @@
                 </span>
         </h2>
 
+        <h3>Introduction</h3>
         <p>
             As part of my experiments to see how far I can coerce Graphviz into
             making graphs people have drawn with other tools, I decided to recreate
             a graph the original author claimed was an idiosyncratic UML class
             diagram.
         </p>
+        <h3>The original</h3>
         <p>
             What the original author wanted, but failed to create in Graphviz was this:
         </p>
@@ -91,12 +95,18 @@
         <img src="goal.png" />
 
         <p>
-            In the original author's attempt, he gave nodes a <code>record</code> 
+            In the original author's attempts, he gave nodes a <code>record</code> 
             shape so he could utilize the eability to connect edges to certain ports.
             This was a good idea, unfortunately for him he ran into various problems 
             that stem from not knowing how Graphviz works and the various quirks 
             this entails.
         </p>
+    <!--
+        <img src="first-attempt.dot.png" />
+        <img src="second-attempt.dot.png" />
+    -->
+
+        <h3>My Versions</h3>
         <p>
             Luckily I have a bit more experience in Graphviz and with relatively 
             little effort, this was what I came up with, utilizing records:
@@ -104,10 +114,9 @@
 
         <img src="uml-like-graph-using-record-shapes.dot.png" />
 
-    <!--
-        <img src="first-attempt.dot.png" />
-        <img src="second-attempt.dot.png" />
-    -->
+        <p>
+            The source code I used can be found at the end of this article.
+        </p>
         <p>
             To achieve the desired effect (removing the horizontal lines), I hid 
             the records border by setting its color to <code>none</code>. I then 
@@ -115,32 +124,42 @@
             instead.
         </p>
         <p>
-            Other than than, I added some whitespace, aligning the text, tweaked 
+            Other than than, I added some whitespace, aligned the text, tweaked 
             the edge label a bit and used <code>lhead</code> (which requires 
             <code>compound = true</code> set on the graph to work) to have the 
             edge's head arrow point to the cluster's border instead of to the 
             node with <a href="http://www.graphviz.org/doc/info/attrs.html#k:portPos"
             >the port</a>.
         </p>
+
+        <h3>Can we do better?</h3>
         <p>
-            The end result is pretty close to the desired look, although the use
-            of clusters is a bit annoying and the edge doesn't quite start at 
-            the node's text. An attampt using an HTML shape for the nodes might
-            fix this. For now it will have to do.
+            The end result is pretty close to the desired look, although having 
+            to use a clusters for every node is a bit annoying and the edge 
+            doesn't quite start at the node's text. I though an attempt using an 
+            HTML shape for the nodes might fix this, so I gave it a go.
         </p>
+
+        <img src="uml-like-graph-using-html-shapes.dot.png" />
+        
         <p>
-            The source code I used can be found at the end of this article.
+            The end result is not much different except that the line of the 
+            arrow starts even further away from the node's text, so the previous 
+            version is the one to go with.
         </p>
+
+        <h3>Final Results</h3>        
         <div class="compare-card">
-            <h3>Original Version</h3>
+            <h4>Original Version</h4>
             <img src="goal.png" />
             <p>
                 <a rel="license" href=""></a>
                 This licensed of this work is Unknown
             </p>
         </div>
+
         <div class="compare-card">
-            <h3>My Version</h3>
+            <h4>My Version using <code>record</code> Shape</h4>
             <img src="uml-like-graph-using-record-shapes.dot.png" />
                     <p>
                 <a rel="license" 
@@ -150,6 +169,20 @@
                 </a>
             </p>
         </div>
+        
+        <div class="compare-card">
+            <h4>My Version using <code>HTML</code> Shape</h4>
+            <img src="uml-like-graph-using-html-shapes.dot.png" />
+                    <p>
+                <a rel="license" 
+                    href="http://creativecommons.org/licenses/by-sa/3.0/"
+                >
+                    This work is licensed under a Creative Commons Attribution-ShareAlike 3.0 Unported License
+                </a>
+            </p>
+        </div>
+
+<h3 style="clear:both;">Source Code</h3>
         <pre><code rel="uml-like-graph-using-record-shapes.dot">
 digraph G {
 
@@ -158,12 +191,9 @@ digraph G {
         dpi = 200
         fontname = "Bitstream Vera Sans"
         fontsize = 8
+        penwidth = 2        // Make the cluster's borders a bit thicker
         rankdir = "LR"
         ranksep = 1        // Add a bit more space inbetween nodes
-    ]
-
-    subgraph [
-        penwidth = 2        // Make the cluster's borders a bit thicker
     ]
 
     node [
@@ -187,19 +217,71 @@ digraph G {
     /* @NOTE: escaping spaces in the label using '\' doesn't seem to work so using '&amp;nbsp' instead. */
     subgraph cluster_Person {
         Person [
-            label = "&lt;g0&gt; \N\l | &lt;g1&gt; &amp;nbsp;&amp;nbsp;&amp;nbsp; age : int\l | &lt;g2&gt; &amp;nbsp;&amp;nbsp;&amp;nbsp; livesIn : City\l | &lt;g3&gt; &amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp; sinceYear : int\l"
+            label = "\N\l | &amp;nbsp;&amp;nbsp;&amp;nbsp; age : int\l | &lt;livesIn&gt; &amp;nbsp;&amp;nbsp;&amp;nbsp; livesIn : City\l | &amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp; sinceYear : int\l"
         ]
     }
 
     subgraph cluster_City {
         City [
-            label = "&lt;f0&gt; \N\l | &lt;f1&gt; &amp;nbsp;&amp;nbsp;&amp;nbsp; name : string\l"
+            label = "&lt;city&gt; \N\l | &amp;nbsp;&amp;nbsp;&amp;nbsp; name : string\l"
         ]
     }
 
-    Person:g2 -&gt; City:f0 [headlabel = "*", lhead = "cluster_City"] // lhead allows us to point to the cluster's border instead of the node, as long as we add `compound = true` to the graph
+    Person:livesIn -&gt; City:city [headlabel = "*", lhead = "cluster_City"] // lhead allows us to point to the cluster's border instead of the node, as long as we add `compound = true` to the graph
 }        </code></pre>
         
+        <pre><code rel="uml-like-graph-using-html-shapes.dot">
+digraph G {
+
+    graph [
+        dpi = 200
+        fontname = "Bitstream Vera Sans"
+        fontsize = 8
+        rankdir = "LR"
+        ranksep = 1        // Add a bit more space inbetween nodes
+    ]
+
+    node [
+        fontname = "Bitstream Vera Sans"
+        fontsize = 8
+        height = 0          // Make the node as small as possible (it will grow if it needs more space)
+        margin = 0          // Remove unneeded whitespace
+        shape = "plaintext" // Make sure our HTML is not placed inside a node
+    ]
+
+    edge [
+        arrowhead = "open"
+        fontname = "Bitstream Vera Sans"
+        labelangle = -5     // Place the asteriks closer to the line
+        labelfontsize = 12  // Make the asteriks a bit bigger
+        labeldistance = 1.5 // Place the asteriks further away from the arrow head
+        penwidth = 2        // Make the line a bit thicker
+    ]
+
+        
+    Person [
+        label = &lt;
+            &lt;table CELLBORDER="0" CELLSPACING="0" BORDER="2"&gt;
+                &lt;tr&gt;&lt;td align="left"&gt;Person&lt;/td&gt;&lt;/tr&gt;
+                &lt;tr&gt;&lt;td align="left"&gt;    age : int&lt;/td&gt;&lt;/tr&gt;
+                &lt;tr&gt;&lt;td align="left" port="livesIn"&gt;    livesIn : City&lt;/td&gt;&lt;/tr&gt;
+                &lt;tr&gt;&lt;td align="left"&gt;        sinceYear : int&lt;/td&gt;&lt;/tr&gt;                
+            &lt;/table&gt;
+        &gt;
+    ]
+    
+    City [
+        label = &lt;
+            &lt;table CELLBORDER="0" CELLSPACING="0" BORDER="2"&gt;
+                &lt;tr&gt;&lt;td align="left" port="city"&gt;City&lt;/td&gt;&lt;/tr&gt;
+                &lt;tr&gt;&lt;td align="left" cellpadding="1"&gt;    name : string&lt;/td&gt;&lt;/tr&gt;
+            &lt;/table&gt;
+        &gt;
+    ]
+    
+    Person:livesIn -&gt; City:city [headlabel = "*"]
+}            
+        </code></pre>
     </article>
 </body>
 </html>
