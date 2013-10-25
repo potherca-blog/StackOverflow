@@ -193,9 +193,10 @@ digraph G {
 
     graph [
         compound = true     // To clip the head at the cluster border
+        dpi = 200
         penwidth = 2        // Make the cluster's borders a bit thicker
         rankdir = "LR"
-        ranksep = 1        // Add a bit more space inbetween nodes
+        ranksep = 1         // Add a bit more space inbetween nodes
     ]
 
     node [
@@ -213,20 +214,20 @@ digraph G {
         penwidth = 2        // Make the line a bit thicker
     ]
 
-    /* @NOTE: escaping spaces in the label using '\' doesn't seem to work so using '&amp;nbsp' instead. */
+    /* @NOTE: escaping spaces in the label using '\' doesn't work so use '&amp;#92;' or '&amp;nbsp' instead. */
     subgraph cluster_Person {
         Person [
-            label = "\N\l | &amp;nbsp;&amp;nbsp;&amp;nbsp; age : int\l | &amp;lt;livesIn&amp;gt; &amp;nbsp;&amp;nbsp;&amp;nbsp; livesIn : City\l | &amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp; sinceYear : int\l"
+            label = "\N\l | &amp;nbsp;&amp;nbsp;&amp;nbsp; age : int\l | &lt;livesIn&gt; &amp;nbsp;&amp;nbsp;&amp;nbsp; livesIn : City\l | &amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp; sinceYear : int\l"
         ]
     }
 
     subgraph cluster_City {
         City [
-            label = "&amp;lt;city&amp;gt; \N\l | &amp;nbsp;&amp;nbsp;&amp;nbsp; name : string\l"
+            label = "&lt;city&gt; \N\l | &amp;nbsp;&amp;nbsp;&amp;nbsp; name : string\l"
         ]
     }
 
-    Person:livesIn -&amp;gt; City:city [headlabel = "*", lhead = "cluster_City"] // lhead allows us to point to the cluster's border instead of the node, as long as we add `compound = true` to the graph
+    Person:livesIn -&gt; City:city [headlabel = "*", lhead = "cluster_City"] // lhead allows us to point to the cluster's border instead of the node, as long as we add `compound = true` to the graph
 }        </code></pre>
         
         <pre><code rel="uml-like-graph-using-html-shapes.dot">

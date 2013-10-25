@@ -5,7 +5,7 @@ digraph G {
         dpi = 200
         penwidth = 2        // Make the cluster's borders a bit thicker
         rankdir = "LR"
-        ranksep = 1        // Add a bit more space inbetween nodes
+        ranksep = 1         // Add a bit more space inbetween nodes
     ]
 
     node [
@@ -23,16 +23,16 @@ digraph G {
         penwidth = 2        // Make the line a bit thicker
     ]
 
-    /* @NOTE: escaping spaces in the label using '\' doesn't seem to work so using '&nbsp' instead. */
+    /* @NOTE: escaping spaces in the label using '\' doesn't work so use '&#92;' or '&nbsp' instead. */
     subgraph cluster_Person {
         Person [
-            label = "\N\l | &#92; &#92; &#92;  age : int\l | <livesIn> &#92; &#92; &#92;  livesIn : City\l | &#92; &#92; &#92; &#92; &#92; &#92;  sinceYear : int\l"
+            label = "\N\l | &nbsp;&nbsp;&nbsp; age : int\l | <livesIn> &nbsp;&nbsp;&nbsp; livesIn : City\l | &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; sinceYear : int\l"
         ]
     }
 
     subgraph cluster_City {
         City [
-            label = "<city> \N\l | &#92; &#92; &#92;  name : string\l"
+            label = "<city> \N\l | &nbsp;&nbsp;&nbsp; name : string\l"
         ]
     }
 
