@@ -1,0 +1,50 @@
+digraph G {
+
+    graph [
+        dpi = 200
+        fontname = "Bitstream Vera Sans"
+        fontsize = 8
+        rankdir = "LR"
+        ranksep = 1        // Add a bit more space inbetween nodes
+    ]
+
+    node [
+        fontname = "Bitstream Vera Sans"
+        fontsize = 8
+        height = 0          // Make the node as small as possible (it will grow if it needs more space)
+        margin = 0          // Remove unneeded whitespace
+        shape = "plaintext" // Make sure our HTML is not placed inside a node
+    ]
+
+    edge [
+        arrowhead = "open"
+        fontname = "Bitstream Vera Sans"
+        labelangle = -5     // Place the asteriks closer to the line
+        labelfontsize = 12  // Make the asteriks a bit bigger
+        labeldistance = 1.5 // Place the asteriks further away from the arrow head
+        penwidth = 2        // Make the line a bit thicker
+    ]
+
+        
+    Person [
+        label = <
+            <table CELLBORDER="0" CELLSPACING="0" BORDER="2">
+                <tr><td align="left">Person</td></tr>
+                <tr><td align="left">    age : int</td></tr>
+                <tr><td align="left" port="livesIn">    livesIn : City</td></tr>
+                <tr><td align="left">        sinceYear : int</td></tr>                
+            </table>
+        >
+    ]
+    
+    City [
+        label = <
+            <table CELLBORDER="0" CELLSPACING="0" BORDER="2">
+                <tr><td align="left" port="city">City</td></tr>
+                <tr><td align="left" cellpadding="1">    name : string</td></tr>
+            </table>
+        >
+    ]
+    
+    Person:livesIn -> City:city [headlabel = "*"]
+}
