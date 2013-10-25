@@ -3,8 +3,6 @@ digraph G {
     graph [
         compound = true     // To clip the head at the cluster border
         dpi = 200
-        fontname = "Bitstream Vera Sans"
-        fontsize = 8
         penwidth = 2        // Make the cluster's borders a bit thicker
         rankdir = "LR"
         ranksep = 1        // Add a bit more space inbetween nodes
@@ -13,7 +11,6 @@ digraph G {
     node [
         color = none        // Hide the node's border
         fontname = "Bitstream Vera Sans"
-        fontsize = 8
         height = 0          // Make the node as small as possible (it will grow if it needs more space)
         margin = 0          // Remove unneeded whitespace
         shape = "record"
@@ -21,9 +18,7 @@ digraph G {
 
     edge [
         arrowhead = "open"
-        fontname = "Bitstream Vera Sans"
         labelangle = -5     // Place the asteriks closer to the line
-        labelfontsize = 12  // Make the asteriks a bit bigger
         labeldistance = 2.5 // Place the asteriks further away from the arrow head
         penwidth = 2        // Make the line a bit thicker
     ]
@@ -31,13 +26,13 @@ digraph G {
     /* @NOTE: escaping spaces in the label using '\' doesn't seem to work so using '&nbsp' instead. */
     subgraph cluster_Person {
         Person [
-            label = "\N\l | &nbsp;&nbsp;&nbsp; age : int\l | <livesIn> &nbsp;&nbsp;&nbsp; livesIn : City\l | &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; sinceYear : int\l"
+            label = "\N\l | &#92; &#92; &#92;  age : int\l | <livesIn> &#92; &#92; &#92;  livesIn : City\l | &#92; &#92; &#92; &#92; &#92; &#92;  sinceYear : int\l"
         ]
     }
 
     subgraph cluster_City {
         City [
-            label = "<city> \N\l | &nbsp;&nbsp;&nbsp; name : string\l"
+            label = "<city> \N\l | &#92; &#92; &#92;  name : string\l"
         ]
     }
 

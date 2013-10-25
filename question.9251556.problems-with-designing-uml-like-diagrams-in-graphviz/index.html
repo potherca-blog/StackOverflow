@@ -182,15 +182,17 @@
             </p>
         </div>
 
-<h3 style="clear:both;">Source Code</h3>
+        <h3 style="clear:both;">Source Code</h3>
+        <p>
+            In case you read through the code and wonder what the <code>\N</code>
+            is about, it is a special <a href="http://www.graphviz.org/doc/info/attrs.html#k:escString"
+            >escape string</a> that is replaced by the name of the node.
+        </p>
         <pre><code rel="uml-like-graph-using-record-shapes.dot">
 digraph G {
 
     graph [
         compound = true     // To clip the head at the cluster border
-        dpi = 200
-        fontname = "Bitstream Vera Sans"
-        fontsize = 8
         penwidth = 2        // Make the cluster's borders a bit thicker
         rankdir = "LR"
         ranksep = 1        // Add a bit more space inbetween nodes
@@ -199,7 +201,6 @@ digraph G {
     node [
         color = none        // Hide the node's border
         fontname = "Bitstream Vera Sans"
-        fontsize = 8
         height = 0          // Make the node as small as possible (it will grow if it needs more space)
         margin = 0          // Remove unneeded whitespace
         shape = "record"
@@ -207,9 +208,7 @@ digraph G {
 
     edge [
         arrowhead = "open"
-        fontname = "Bitstream Vera Sans"
         labelangle = -5     // Place the asteriks closer to the line
-        labelfontsize = 12  // Make the asteriks a bit bigger
         labeldistance = 2.5 // Place the asteriks further away from the arrow head
         penwidth = 2        // Make the line a bit thicker
     ]
@@ -217,33 +216,29 @@ digraph G {
     /* @NOTE: escaping spaces in the label using '\' doesn't seem to work so using '&amp;nbsp' instead. */
     subgraph cluster_Person {
         Person [
-            label = "\N\l | &amp;nbsp;&amp;nbsp;&amp;nbsp; age : int\l | &lt;livesIn&gt; &amp;nbsp;&amp;nbsp;&amp;nbsp; livesIn : City\l | &amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp; sinceYear : int\l"
+            label = "\N\l | &amp;nbsp;&amp;nbsp;&amp;nbsp; age : int\l | &amp;lt;livesIn&amp;gt; &amp;nbsp;&amp;nbsp;&amp;nbsp; livesIn : City\l | &amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp; sinceYear : int\l"
         ]
     }
 
     subgraph cluster_City {
         City [
-            label = "&lt;city&gt; \N\l | &amp;nbsp;&amp;nbsp;&amp;nbsp; name : string\l"
+            label = "&amp;lt;city&amp;gt; \N\l | &amp;nbsp;&amp;nbsp;&amp;nbsp; name : string\l"
         ]
     }
 
-    Person:livesIn -&gt; City:city [headlabel = "*", lhead = "cluster_City"] // lhead allows us to point to the cluster's border instead of the node, as long as we add `compound = true` to the graph
+    Person:livesIn -&amp;gt; City:city [headlabel = "*", lhead = "cluster_City"] // lhead allows us to point to the cluster's border instead of the node, as long as we add `compound = true` to the graph
 }        </code></pre>
         
         <pre><code rel="uml-like-graph-using-html-shapes.dot">
 digraph G {
 
     graph [
-        dpi = 200
-        fontname = "Bitstream Vera Sans"
-        fontsize = 8
         rankdir = "LR"
         ranksep = 1        // Add a bit more space inbetween nodes
     ]
 
     node [
         fontname = "Bitstream Vera Sans"
-        fontsize = 8
         height = 0          // Make the node as small as possible (it will grow if it needs more space)
         margin = 0          // Remove unneeded whitespace
         shape = "plaintext" // Make sure our HTML is not placed inside a node
@@ -251,9 +246,7 @@ digraph G {
 
     edge [
         arrowhead = "open"
-        fontname = "Bitstream Vera Sans"
         labelangle = -5     // Place the asteriks closer to the line
-        labelfontsize = 12  // Make the asteriks a bit bigger
         labeldistance = 1.5 // Place the asteriks further away from the arrow head
         penwidth = 2        // Make the line a bit thicker
     ]
@@ -261,7 +254,7 @@ digraph G {
         
     Person [
         label = &lt;
-            &lt;table CELLBORDER="0" CELLSPACING="0" BORDER="2"&gt;
+            &lt;table CELLBORDER="0" CELLSPACING="1" BORDER="2"&gt;
                 &lt;tr&gt;&lt;td align="left"&gt;Person&lt;/td&gt;&lt;/tr&gt;
                 &lt;tr&gt;&lt;td align="left"&gt;    age : int&lt;/td&gt;&lt;/tr&gt;
                 &lt;tr&gt;&lt;td align="left" port="livesIn"&gt;    livesIn : City&lt;/td&gt;&lt;/tr&gt;
@@ -272,7 +265,7 @@ digraph G {
     
     City [
         label = &lt;
-            &lt;table CELLBORDER="0" CELLSPACING="0" BORDER="2"&gt;
+            &lt;table CELLBORDER="0" CELLSPACING="1" BORDER="2"&gt;
                 &lt;tr&gt;&lt;td align="left" port="city"&gt;City&lt;/td&gt;&lt;/tr&gt;
                 &lt;tr&gt;&lt;td align="left" cellpadding="1"&gt;    name : string&lt;/td&gt;&lt;/tr&gt;
             &lt;/table&gt;
@@ -280,8 +273,7 @@ digraph G {
     ]
     
     Person:livesIn -&gt; City:city [headlabel = "*"]
-}            
-        </code></pre>
+}        </code></pre>
     </article>
 </body>
 </html>
