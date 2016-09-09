@@ -56,8 +56,10 @@ good idea to have all of this information together in one place as well.
         $('.container').append($('<h2>Available Answers</h2>'));
         var $List = $('.container').append($('<ul></ul>'));
         foo(function(p_sPath){
-            var sContent = '<li><a href="' + p_sPath + '">' + p_sPath+ '<\/a><\/li>'
-            $List.append(sContent);
+            if (p_sPath.indexOf('question.') === 0) {
+                var sContent = '<li><a href="' + p_sPath + '">' + p_sPath+ '<\/a><\/li>'
+                $List.append(sContent);
+            }
         });    
     };
 </script>
