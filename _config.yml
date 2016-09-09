@@ -1,0 +1,9 @@
+defaults:
+  -
+    scope:
+      path: "" # empty string for all files
+    values:
+      layout: "default"
+webrick:
+  headers:
+    X-Clacks-Overhead: "GNU Terry Pratchett"
