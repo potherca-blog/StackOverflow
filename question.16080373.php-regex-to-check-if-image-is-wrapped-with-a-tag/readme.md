@@ -1,3 +1,7 @@
+---
+permalink: /question.16080373.php-regex-to-check-if-image-is-wrapped-with-a-tag/index.html
+---
+
 I would *very* strongly advise against using a regular expression for this. 
 Besides being more error prone and less readable, it also does not give you the 
 ability to manipulate the content easily.

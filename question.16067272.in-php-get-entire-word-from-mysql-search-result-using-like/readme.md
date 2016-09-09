@@ -1,3 +1,7 @@
+---
+permalink: /question.16067272.in-php-get-entire-word-from-mysql-search-result-using-like/index.html
+---
+
 I read [your discussion on this][1] and more robust implementation might be in 
 order. Especially taking your need to support [diacritics][2] into account. 
 Using a single regular expression to fix all your problems might seem tempting, 
