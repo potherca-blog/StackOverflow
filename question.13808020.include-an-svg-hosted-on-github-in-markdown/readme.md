@@ -1,3 +1,6 @@
+---
+permalink: /question.13808020.include-an-svg-hosted-on-github-in-markdown
+---
 # Linking to SVG files hosted on github
 
 The purpose of `raw.github.com` is to allow users to view the contents of a 
