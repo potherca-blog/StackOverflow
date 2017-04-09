@@ -38,9 +38,9 @@ good idea to have all of this information together in one place as well.
     /* Retrieve a list of available answers */
     function addMenu() {
         function foo(p_sCallback) {
-            $.getJSON('https://api.github.com/repos/potherca/StackOverflow/git/refs/heads'
+            $.getJSON('https://api.github.com/repos/potherca-blog/StackOverflow/git/refs/heads'
                 , function(p_oResponse, p_sStatus, p_oXHR) {
-                    $.getJSON('https://api.github.com/repos/potherca/StackOverflow/git/trees/' + p_oResponse[0].object.sha
+                    $.getJSON('https://api.github.com/repos/potherca-blog/StackOverflow/git/trees/' + p_oResponse[0].object.sha
                         , function(p_oResponse, p_sStatus, p_oXHR) {
                             $.each(p_oResponse.tree, function(p_i, p_oTree){
                                 if(p_oTree.type === 'tree') {
