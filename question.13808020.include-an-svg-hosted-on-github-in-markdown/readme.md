@@ -36,7 +36,7 @@ sets the correct headers for you.
     ![Alt text](controllers_brief.svg)
     <img src="controllers_brief.svg">
 
-###Result
+### Result
 
 ![Alt text](controllers_brief.svg)
 <img src="controllers_brief.svg">
