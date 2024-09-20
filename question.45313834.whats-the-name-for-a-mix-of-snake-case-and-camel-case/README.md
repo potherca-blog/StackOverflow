@@ -39,44 +39,45 @@ I hope this answers your question, an image of a ypotryll has been added for you
 
 <details open><summary><h2>Comments</h2></summary>
 
--   If you get rid of some (not all) of the underscores from upper snake case, then it's not proper upper snake case anymore.
-    – [mrog][5] [Commented Feb 4, 2019 at 21:59][6]
--   Then maybe "Studly\_sNake\_CaPs" is more appropriate? 🤔
-    – [Potherca][7] [Commented Feb 5, 2019 at 16:04][8]
--   That would work if the upper case letters were in random positions, but I'm only seeing them at the beginnings of words.
-    – [mrog][9] [Commented Feb 5, 2019 at 16:40][10]
--   Then I think we'll have to settle for `lowerCamel_snakeCase`, although `lower_camelCase_embeddedUnderscore` might be more precise... (see [wiki.c2.com/?CapitalizationRules][11]).
-    – [Potherca][12] [Commented Feb 6, 2019 at 8:35][13]
--   Camel\_snake\_case isn't bad. We could shorten it to ypotryll\_case. [en.wikipedia.org/wiki/Ypotryll][14]
-    – [mrog][15] [Commented Feb 6, 2019 at 18:23][16]
--   I've updated my answer to reflect the insights from these comments.
-    – [Potherca][17] [Commented Feb 7, 2019 at 20:34][18]    
--   You say, "only encountered once and never to be seen again." I'll toast to that, even if my hope is in vain.
-    – [mrog][19] [Commented Feb 7, 2019 at 21:44][20]
--   What about "1337 Case"...
-    – [David Weber][21] [Commented Jul 9, 2022 at 8:27][22]
--   I so much like the word ypotryll(\_case), that I propose to widen the meaning to any case of naming convention you never want to see again. (The proposal to only ever apply it to this one exact case is reasonable and admittedly better matches the history of the word. But, it is so cool....) This of course directly contradicts the comment by @mrog, in spite of the fact that I consider it appropriate and even clicked the "agree" triangle on it.
-    – [Yunnosch][23] [Commented Sep 20, 2024 at 7:26][24]
-
-[5]: /users/1664198/mrog "2,046 reputation"
-[6]: #comment95852305_54524664
-[7]: /users/153049/potherca "14,235 reputation"
-[8]: #comment95878256_54524664
-[9]: /users/1664198/mrog "2,046 reputation"
-[10]: #comment95879441_54524664
-[11]: http://wiki.c2.com/?CapitalizationRules
-[12]: /users/153049/potherca "14,235 reputation"
-[13]: #comment95898947_54524664
-[14]: https://en.wikipedia.org/wiki/Ypotryll
-[15]: /users/1664198/mrog "2,046 reputation"
-[16]: #comment95919588_54524664
-[17]: /users/153049/potherca "14,235 reputation"
-[18]: #comment95960629_54524664
-[19]: /users/1664198/mrog "2,046 reputation"
-[20]: #comment95962554_54524664
-[21]: /users/16048914/david-weber "1,817 reputation"
-[22]: #comment128794650_54524664
-[23]: /users/7733418/yunnosch "26,613 reputation"
-[24]: #comment139303137_54524664
+- If you get rid of some (not all) of the underscores from upper snake case, then it's not proper upper snake case anymore.
+  – [mrog][5] [Commented Feb 4, 2019 at 21:59][6]
+- Then maybe "Studly\_sNake\_CaPs" is more appropriate? 🤔
+  – [Potherca][7] [Commented Feb 5, 2019 at 16:04][8]
+- That would work if the upper case letters were in random positions, but I'm only seeing them at the beginnings of words.
+  – [mrog][9] [Commented Feb 5, 2019 at 16:40][10]
+- Then I think we'll have to settle for `lowerCamel_snakeCase`, although `lower_camelCase_embeddedUnderscore` might be more precise... (see [wiki.c2.com/?CapitalizationRules][11]).
+  – [Potherca][12] [Commented Feb 6, 2019 at 8:35][13]
+- Camel\_snake\_case isn't bad. We could shorten it to ypotryll\_case. [en.wikipedia.org/wiki/Ypotryll][14]
+  – [mrog][15] [Commented Feb 6, 2019 at 18:23][16]
+- I've updated my answer to reflect the insights from these comments.
+  – [Potherca][17] [Commented Feb 7, 2019 at 20:34][18]    
+- You say, "only encountered once and never to be seen again." I'll toast to that, even if my hope is in vain.
+  – [mrog][19] [Commented Feb 7, 2019 at 21:44][20]
+- What about "1337 Case"...
+  – [David Weber][21] [Commented Jul 9, 2022 at 8:27][22]
+- I so much like the word ypotryll(\_case), that I propose to widen the meaning to any case of naming convention you never want to see again. (The proposal to only ever apply it to this one exact case is reasonable and admittedly better matches the history of the word. But, it is so cool....) This of course directly contradicts the comment by @mrog, in spite of the fact that I consider it appropriate and even clicked the "agree" triangle on it.
+  – [Yunnosch][23] [Commented Sep 20, 2024 at 7:26][24]
 
 </details>
+
+[5]: https://stackoverflow.com/users/1664198/mrog "2,046 reputation"
+[6]: https://stackoverflow.com/questions/45313834/whats-the-name-for-a-mix-of-snake-case-and-camel-case#comment95852305_54524664
+[7]: https://stackoverflow.com/users/153049/potherca "14,235 reputation"
+[8]: https://stackoverflow.com/questions/45313834/whats-the-name-for-a-mix-of-snake-case-and-camel-case#comment95878256_54524664
+[9]: https://stackoverflow.com/users/1664198/mrog "2,046 reputation"
+[10]: https://stackoverflow.com/questions/45313834/whats-the-name-for-a-mix-of-snake-case-and-camel-case#comment95879441_54524664
+[11]: http://wiki.c2.com/?CapitalizationRules
+[12]: https://stackoverflow.com/users/153049/potherca "14,235 reputation"
+[13]: https://stackoverflow.com/questions/45313834/whats-the-name-for-a-mix-of-snake-case-and-camel-case#comment95898947_54524664
+[14]: https://en.wikipedia.org/wiki/Ypotryll
+[15]: https://stackoverflow.com/users/1664198/mrog "2,046 reputation"
+[16]: https://stackoverflow.com/questions/45313834/whats-the-name-for-a-mix-of-snake-case-and-camel-case#comment95919588_54524664
+[17]: https://stackoverflow.com/users/153049/potherca "14,235 reputation"
+[18]: https://stackoverflow.com/questions/45313834/whats-the-name-for-a-mix-of-snake-case-and-camel-case#comment95960629_54524664
+[19]: https://stackoverflow.com/users/1664198/mrog "2,046 reputation"
+[20]: https://stackoverflow.com/questions/45313834/whats-the-name-for-a-mix-of-snake-case-and-camel-case#comment95962554_54524664
+[21]: https://stackoverflow.com/users/16048914/david-weber "1,817 reputation"
+[22]: https://stackoverflow.com/questions/45313834/whats-the-name-for-a-mix-of-snake-case-and-camel-case#comment128794650_54524664
+[23]: https://stackoverflow.com/users/7733418/yunnosch "26,613 reputation"
+[24]: https://stackoverflow.com/questions/45313834/whats-the-name-for-a-mix-of-snake-case-and-camel-case#comment139303137_54524664
+
