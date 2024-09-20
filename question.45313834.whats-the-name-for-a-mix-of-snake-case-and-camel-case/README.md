@@ -20,8 +20,7 @@ This, I feel, makes it a perfect match for this coding standard, both in form (c
 
 I hope this answers your question, an image of a ypotryll has been added for your viewing pleasure:
 
-
-[![](https://i.sstatic.net/6ToT4.png)](https://mistholme.com/dictionary/ypotryll/)
+[![](https://github.com/user-attachments/assets/d800a7f4-63df-4bed-b262-301a88fbcea9)](https://mistholme.com/dictionary/ypotryll/)
 
 <sup>image source: https://mistholme.com/dictionary/ypotryll/</sup>
 
